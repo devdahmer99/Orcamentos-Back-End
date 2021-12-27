@@ -3,6 +3,7 @@
 namespace Alura\DesignPattern\EstadosOrcamento;
 
 use Alura\DesignPattern\Orcamento;
+use DomainException;
 
 abstract class EstadoOrcamento
 {
@@ -17,17 +18,17 @@ abstract class EstadoOrcamento
 
     public function Aprova(Orcamento $orcamento)
     {
-        throw new \DomainException('Este orcamento não pode ser aprovado');
+        throw new DomainException('Este orcamento não pode ser aprovado');
     }
 
     public function Reprovado(Orcamento $orcamento)
     {
-        throw new \DomainException('Este orcamento não pode ser reprovado');
+        throw new DomainException('Este orcamento não pode ser reprovado');
     }
 
     public function Finaliza(Orcamento $orcamento)
     {
-        throw new \DomainException('Este orcamento não pode ser finalizado');
+        throw new DomainException('Este orcamento não pode ser finalizado');
     }
 
 }
