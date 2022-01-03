@@ -17,6 +17,10 @@ class CalculadoraDeDescontos
             )
         );
 
-        return $cadeiaDescontos->calculaDesconto($orcamento);
+        $descontoCalculado = $cadeiaDescontos->calculaDesconto($orcamento);
+        $logDesconto = new logDesconto();
+        $logDesconto->informar($descontoCalculado);
+
+        return $descontoCalculado;
      }
 }
