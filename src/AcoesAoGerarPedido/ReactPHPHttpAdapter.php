@@ -2,7 +2,7 @@
 
 namespace Alura\DesignPattern\AcoesAoGerarPedido;
 
-use Alura\DesignPattern\Api\HttpAdapter;
+use Alura\DesignPattern\Http\HttpAdapter;
 
 class ReactPHPHttpAdapter implements HttpAdapter
 {

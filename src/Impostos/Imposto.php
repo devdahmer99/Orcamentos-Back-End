@@ -4,7 +4,24 @@ namespace Alura\DesignPattern\Impostos;
 
 use Alura\DesignPattern\Orcamento;
 
-interface Imposto
+abstract class Imposto
 {
-    public function calculaImposto(Orcamento $orcamento): float;
+    private ?Imposto $outroImposto;
+
+    public function __construct(Imposto $outroImposto = null)
+    {
+        $this->outroImposto = $outroImposto;
+    }
+
+    abstract protected function realizaCalculo(Orcamento $orcamento): float;
+
+    public function calculaImposto($orcamento)
+    {
+        return $this->realizaCalculo($orcamento)  + $this->realizaCalculoOutroImposto($orcamento);
+    }
+
+    public function realizaCalculoOutroImposto(Orcamento $orcamento)
+    {
+        return $this->outroImposto === null ? 0 : $this->outroImposto->realizaCalculoOutroImposto($orcamento);
+    }
 }

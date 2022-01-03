@@ -1,6 +1,6 @@
 <?php
 
-namespace Alura\DesignPattern\Api;
+namespace Alura\DesignPattern\Http;
 
 class CurlHttpAdapter implements HttpAdapter
 {

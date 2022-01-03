@@ -2,7 +2,7 @@
 
 namespace Alura\DesignPattern;
 
-use Alura\DesignPattern\Api\HttpAdapter;
+use Alura\DesignPattern\Http\HttpAdapter;
 use Alura\DesignPattern\EstadosOrcamento\Finalizado;
 use DomainException;
 

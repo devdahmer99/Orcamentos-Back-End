@@ -1,6 +1,6 @@
 <?php
 
-use Alura\DesignPattern\Api\CurlHttpAdapter;
+use Alura\DesignPattern\Http\CurlHttpAdapter;
 use Alura\DesignPattern\Orcamento;
 use Alura\DesignPattern\RegistroOrcamento;
 
