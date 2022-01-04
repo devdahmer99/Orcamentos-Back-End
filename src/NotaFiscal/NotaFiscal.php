@@ -3,6 +3,7 @@
 namespace Alura\DesignPattern\NotaFiscal;
 
 use Alura\DesignPattern\itemOrcamento;
+use DateTimeInterface as DateTimeInterfaceAlias;
 
 class NotaFiscal
 {
@@ -10,7 +11,7 @@ class NotaFiscal
     public string $razaoSocial;
     public array $itens;
     public string $orbservacoes;
-    public \DateTimeInterface $dataEmissao;
+    public DateTimeInterfaceAlias $dataEmissao;
     public float $valorImpostos;
 
 
@@ -19,5 +20,11 @@ class NotaFiscal
         return array_reduce($this->itens, function (float $valorAcumulado, itemOrcamento $itemAtual) {
             return $valorAcumulado + $itemAtual->valor;
         }, 0);
+    }
+
+
+    public function __clone()
+    {
+        $this->dataEmissao = new \DateTimeImmutable();
     }
 }
